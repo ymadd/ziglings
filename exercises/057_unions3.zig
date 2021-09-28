@@ -11,9 +11,11 @@
 //     };
 //
 // Let's convert Insect. Doctor Zoraptera has already deleted the
-// explicit InsectStat enum for you!
+// 明示的なinsectstat enum forあなたのために！
 //
 const std = @import("std");
+
+const InsectStat = enum { flowers_visited, still_alive };
 
 const Insect = union(InsectStat) {
     flowers_visited: u16,
@@ -39,16 +41,16 @@ fn printInsect(insect: Insect) void {
     }
 }
 
-// Inferred enums are neat, representing the tip of the iceberg
-// in the relationship between enums and unions. You can actually
-// coerce a union TO an enum (which gives you the active field
-// from the union as an enum). What's even wilder is that you can
-// coerce an enum to a union! But don't get too excited, that
-// only works when the union type is one of those weird zero-bit
-// types like void!
+//推論された列挙体は氷山の先端を表すきちんとしている
+//列挙体と労働組合の間の関係にあります。あなたは実際にもできます
+// enumに和集合を支援する（これはあなたにアクティブなフィールドを与えます
+// enumとしての組合から）。Wilderさえもあなたができることは何ですか
+//組合への列挙体を強制！しかし、あまりにも興奮しないでください
+//ユニオンタイプがそれらの奇妙なゼロビットの1つのものの1つの場合にのみ機能します
+// voidのようなタイプ！
 //
-// Tagged unions, as with most ideas in computer science, have a
-// long history going back to the 1960s. However, they're only
-// recently becoming mainstream, particularly in system-level
-// programming languages. You might have also seen them called
-// "variants", "sum types", or even "enums"!
+//コンピュータサイエンスでのほとんどのアイデアと同様に、統合をタグ付けしました。
+// 1960年代に戻る長い歴史。しかし、彼らはのみです
+//最近主流になる、特にシステムレベルで
+// プログラミング言語。あなたも彼らが求められたことを見たかもしれません
+//「バリアント」、「SUMタイプ」、さらには「enums」でも！

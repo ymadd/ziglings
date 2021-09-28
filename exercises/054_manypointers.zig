@@ -12,24 +12,24 @@
 const std = @import("std");
 
 pub fn main() void {
-    // Take a good look at the array type to which we're coercing
-    // the zen12 string (the REAL nature of strings will be
-    // revealed when we've learned some additional features):
+    //私たちが強制しているアレイタイプをよく見てください
+    // Zen12文字列（文字列の実質的な性質は
+    //いくつかの追加機能を学んだときに明らかにされました）：
     const zen12: *const [21]u8 = "Memory is a resource.";
     //
-    //   It would also have been valid to coerce to a slice:
+    //   スライスに強制することも有効でした。
     //         const zen12: []const u8 = "...";
     //
     // Now let's turn this into a "many-item pointer":
-    const zen_manyptr: [*]const u8 = zen12;
+    const zen_manyptr: *const [21]u8 = zen12;
 
-    // It's okay to access zen_manyptr just like an array or slice as
-    // long as you keep track of the length yourself!
+    //配列やスライスのようにzen_manyptrにアクセスしても大丈夫です。
+    //あなたが自分自身の長さを追跡し続ける限り長い！
     //
-    // A "string" in Zig is a pointer to an array of const u8 values
-    // (or a slice of const u8 values, as we saw above). So, we could
-    // treat a "many-item pointer" of const u8 as a string as long as
-    // we can CONVERT IT TO A SLICE. (Hint: we do know the length!)
+    // Zigの "String"はconst u8値の配列へのポインタです。
+    //（または上記のように、Const U8値のスライス）。だから、私たちはできました
+    // const u8の「多項目ポインタ」を文字列として扱います。
+    //それをスライスに変換することができます。（ヒント：あそびは長長を捨てる！）
     //
     // Please fix this line so the print statement below can print it:
     const zen12_string: []const u8 = zen_manyptr;

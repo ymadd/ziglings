@@ -1,11 +1,11 @@
 //
-// A union lets you store different types and sizes of data at
-// the same memory address. How is this possible? The compiler
-// sets aside enough memory for the largest thing you might want
-// to store.
+//ユニオンを使用すると、さまざまな種類とサイズのデータが保存されます。
+//同じメモリアドレス。これはどのように可能ですか？コンパイラ
+//あなたが望むかもしれない最大のものに対する十分なメモリを脇に置く
+//保存する。
 //
 // In this example, an instance of Foo always takes up u64 of
-// space in memory even if you're currently storing a u8.
+// 現在U8を保存している場合でもメモリ内のスペース。
 //
 //     const Foo = union {
 //         small: u8,
@@ -59,8 +59,8 @@ pub fn main() void {
     std.debug.print("Insect report! ", .{});
 
     // Oops! We've made a mistake here.
-    printInsect(ant, AntOrBee.c);
-    printInsect(bee, AntOrBee.c);
+    printInsect(ant, AntOrBee.a);
+    printInsect(bee, AntOrBee.b);
 
     std.debug.print("\n", .{});
 }
